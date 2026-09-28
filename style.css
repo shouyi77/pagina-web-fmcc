@@ -9,11 +9,15 @@ body {
 
         /* Estilos del encabezado principal */
         header {
-            background-color: #004d40;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            header {
+    background-image: url("img/header.jpg"); /* Ruta de tu imagen */
+    background-size: cover;                  /* La imagen cubre todo el header */
+    background-position: center;             /* Centrada */
+    background-repeat: no-repeat;            /* No se repite */
+    padding: 60px 20px;                      /* Espaciado interno */
+    color: white;                            /* Texto en blanco */
+    text-align: center;                      /* Centrar título y subtítulo */
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);   /* Sombra para que se lea bien */
         }
 
         header h1 {

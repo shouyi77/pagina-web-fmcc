@@ -8,43 +8,42 @@ body {
         }
 
         /* Estilos del encabezado principal */
-        header {
-    background-image: url("img/header.jpg"); /* Ruta de tu imagen */
-    background-size: cover;                  /* La imagen cubre todo el header */
-    background-position: center;             /* Centrada */
-    background-repeat: no-repeat;            /* No se repite */
-    padding: 60px 20px;                      /* Espaciado interno */
-    color: white;                            /* Texto en blanco */
-    text-align: center;                      /* Centrar título y subtítulo */
-    text-shadow: 0 0 10px rgba(0,0,0,0.7);   /* Sombra para que se lea bien */
+header {
+            background-image: url("img/header.jpg"); /* Ruta de tu imagen */
+            background-size: cover;                  /* La imagen cubre todo el header */
+            background-position: center;             /* Centrada */
+            background-repeat: no-repeat;            /* No se repite */
+            padding: 60px 20px;                      /* Espaciado interno */
+            color: white;                            /* Texto en blanco */
+            text-align: center;                      /* Centrar título y subtítulo */
+            text-shadow: 0 0 10px rgba(0,0,0,0.7);   /* Sombra para que se lea bien */
         }
 
-        header h1 {
+header h1 {
             margin: 0;
             font-size: 2.5rem;
         }
 
 .header-title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            }
 
 .logo {
     width: 60px;
     height: auto;
 }
 
-
         /* Contenedor principal que centra y limita el ancho del contenido */
-        .container {
+.container {
             max-width: 1000px;
             margin: 20px auto;
             padding: 0 20px;
         }
 
         /* Estilos de las secciones (tarjetas de información de los hoteles) */
-        .hotel-section {
+.hotel-section {
             background: white;
             border-radius: 8px;
             padding: 20px 30px;
@@ -53,18 +52,18 @@ body {
             border-left: 5px solid #004d40;
         }
 
-        .hotel-section h2 {
+.hotel-section h2 {
             color: #004d40;
             border-bottom: 2px solid #eee;
             padding-bottom: 10px;
         }
 
-        .hotel-section p {
+.hotel-section p {
             text-align: justify;
         }
 
         /* Estilos del pie de página */
-        footer {
+footer {
             text-align: center;
             padding: 20px;
             background-color: #333;
@@ -77,7 +76,7 @@ body {
         /* --------------------------------------------------- */
 
         /* El fondo oscuro semi-transparente que cubre toda la pantalla */
-        .cookie-overlay {
+.cookie-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -91,7 +90,7 @@ body {
         }
 
         /* La caja blanca del aviso de cookies */
-        .cookie-modal {
+.cookie-modal {
             background: white;
             padding: 30px;
             border-radius: 10px;
@@ -101,13 +100,13 @@ body {
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .cookie-modal h3 {
+.cookie-modal h3 {
             margin-top: 0;
             color: #d32f2f;
         }
 
         /* Botón de aceptación de cookies */
-        .btn-accept {
+.btn-accept {
             background-color: #004d40;
             color: white;
             border: none;
@@ -119,11 +118,11 @@ body {
             transition: background-color 0.3s;
         }
 
-        .btn-accept:hover {
+.btn-accept:hover {
             background-color: #00251a;
         }
 
-         .btn-reject {
+.btn-reject {
             background-color: #004d40;
             color: white;
             border: none;
@@ -135,11 +134,11 @@ body {
             transition: background-color 0.3s;
         }
 
-        .btn-reject:hover {
+.btn-reject:hover {
             background-color: #00251a;
         }
 
         /* Clase auxiliar para ocultar elementos mediante JavaScript */
-        .hidden {
+.hidden {
             display: none !important;
         }

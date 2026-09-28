@@ -9,7 +9,6 @@ body {
 
         /* Estilos del encabezado principal */
         header {
-            header {
     background-image: url("img/header.jpg"); /* Ruta de tu imagen */
     background-size: cover;                  /* La imagen cubre todo el header */
     background-position: center;             /* Centrada */

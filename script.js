@@ -21,3 +21,14 @@
             //     cookieContainer.classList.add('hidden');
             // }
         });
+const menuToggle = document.getElementById("menuToggle");
+const menuDesplegable = document.getElementById("menuDesplegable");
+
+menuToggle.addEventListener("click", () => {
+    if (menuDesplegable.style.display === "block") {
+        menuDesplegable.style.display = "none";
+    } else {
+        menuDesplegable.style.display = "block";
+    }
+});
+

@@ -1,33 +1,55 @@
-document.addEventListener('DOMContentLoaded', function() {
-            
-            const cookieContainer = document.getElementById('cookieContainer');
-            const acceptButton = document.getElementById('acceptCookies');
-            const rejectButton = document.getElementById('rejectCookies');
+document.addEventListener("DOMContentLoaded", () => {
 
-            // 1. Evento para ACEPTAR
-            acceptButton.addEventListener('click', function() {
-                cookieContainer.classList.add('hidden');
-            });
+    /* ================================
+       POP-UP DE COOKIES
+    ================================= */
+    const cookieContainer = document.getElementById("cookieContainer");
+    const acceptButton = document.getElementById("acceptCookies");
+    const rejectButton = document.getElementById("rejectCookies");
 
-            // 2. Evento para RECHAZAR ccokies (hecho por mi, hay veces q te lleva a Google y te expulsa, otras veces no)
-            rejectButton.addEventListener('click', function() {
-                window.location.replace('https://www.google.com');
-                
-            });
-
+    if (acceptButton) {
+        acceptButton.addEventListener("click", () => {
+            cookieContainer.classList.add("hidden");
         });
-const menuToggle = document.getElementById("menuToggle");
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
+    }
 
-menuToggle.addEventListener("click", () => {
-    sidebar.classList.add("active");
-    overlay.classList.add("active");
+    if (rejectButton) {
+        rejectButton.addEventListener("click", () => {
+            // Redirige siempre correctamente
+            window.location.href = "https://www.google.com";
+        });
+    }
+
+    /* ================================
+       MENÚ LATERAL (SIDEBAR)
+    ================================= */
+    const menuToggle = document.getElementById("menuToggle");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    if (menuToggle) {
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.add("active");
+            overlay.classList.add("active");
+        });
+    }
+
+    // Cerrar al hacer clic fuera
+    if (overlay) {
+        overlay.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+    }
+
+    // Cerrar el menú al hacer clic en un enlace del sidebar
+    const sidebarLinks = document.querySelectorAll(".sidebar a");
+
+    sidebarLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+    });
+
 });
-
-// Cerrar al hacer clic fuera
-overlay.addEventListener("click", () => {
-    sidebar.classList.remove("active");
-    overlay.classList.remove("active");
-});
-

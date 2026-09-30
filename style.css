@@ -190,21 +190,30 @@ footer {
     color: #a61e4d;
 }
 
-.contacto {
-    margin-top: 60px;
-    padding: 40px 20px;
-    background: #fff0f6;
-    text-align: center;
-    border-top: 3px solid #ffb3c6;
+/* ===== CONTACTO A LA DERECHA ===== */
+.contacto-derecha {
+    width: 280px;               /* tamaño del bloque */
+    background: #fff0f6;        /* rosa suave */
+    padding: 25px;
+    border-left: 3px solid #ffb3c6;
+    position: absolute;
+    right: 20px;                /* separación del borde derecho */
+    top: 150px;                 /* ajusta según tu header */
+    text-align: left;           /* texto alineado normal */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.contacto a {
+.contacto-derecha a {
     color: #d6336c;
     font-weight: bold;
     text-decoration: none;
 }
 
-.contacto a:hover {
+.contacto-derecha a:hover {
     text-decoration: underline;
 }
 
+.contacto-derecha .redes {
+    margin-top: 15px;
+}

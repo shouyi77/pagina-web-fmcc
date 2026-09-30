@@ -190,3 +190,21 @@ footer {
     color: #a61e4d;
 }
 
+.contacto {
+    margin-top: 60px;
+    padding: 40px 20px;
+    background: #fff0f6;
+    text-align: center;
+    border-top: 3px solid #ffb3c6;
+}
+
+.contacto a {
+    color: #d6336c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contacto a:hover {
+    text-decoration: underline;
+}
+

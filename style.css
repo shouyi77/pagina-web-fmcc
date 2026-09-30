@@ -1,162 +1,164 @@
-body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-        }
+/* =============================== */
+/*            GLOBAL               */
+/* =============================== */
 
-        /* Estilos del encabezado principal */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =============================== */
+/*            HEADER               */
+/* =============================== */
+
 header {
-            background-image: url("la-palma-princess.jpg"); /* Ruta de tu imagen */
-            background-size: cover;                  /* La imagen cubre todo el header */
-            background-position: center;             /* Centrada */
-            background-repeat: no-repeat;            /* No se repite */
-            padding: 60px 20px;                      /* Espaciado interno */
-            color: white;                            /* Texto en blanco */
-            text-align: center;                      /* Centrar título y subtítulo */
-            text-shadow: 0 0 10px rgba(0,0,0,0.7);   /* Sombra para que se lea bien */
-        }
+    background-image: url("la-palma-princess.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
 
 header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
+    margin: 0;
+    font-size: 2.5rem;
+}
 
 .header-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            }
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
 .logo {
     width: 60px;
     height: auto;
 }
 
-        /* Contenedor principal que centra y limita el ancho del contenido */
-.container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
+/* =============================== */
+/*         CONTENEDOR              */
+/* =============================== */
 
-        /* Estilos de las secciones (tarjetas de información de los hoteles) */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* =============================== */
+/*        SECCIONES HOTEL          */
+/* =============================== */
+
 .hotel-section {
-            background: white;
-            border-radius: 8px;
-            padding: 20px 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 5px solid #004d40;
-        }
+    background: white;
+    border-radius: 8px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid #004d40;
+}
 
 .hotel-section h2 {
-            color: #004d40;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
+    color: #004d40;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
 
 .hotel-section p {
-            text-align: justify;
-        }
+    text-align: justify;
+}
 
-        /* Estilos del pie de página */
+/* =============================== */
+/*           FOOTER                */
+/* =============================== */
+
 footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 40px;
-        }
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
 
-        /* --------------------------------------------------- */
-        /* Estilos de la ventana emergente (Pop-up) de Cookies */
-        /* --------------------------------------------------- */
+/* =============================== */
+/*         POP-UP COOKIES          */
+/* =============================== */
 
-        /* El fondo oscuro semi-transparente que cubre toda la pantalla */
 .cookie-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex; /* Usamos Flexbox para centrar el modal */
-            justify-content: center;
-            align-items: center;
-            z-index: 9999; /* Asegura que esté por encima de todo */
-        }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
-        /* La caja blanca del aviso de cookies */
 .cookie-modal {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
 .cookie-modal h3 {
-            margin-top: 0;
-            color: #d32f2f;
-        }
+    margin-top: 0;
+    color: #d32f2f;
+}
 
-        /* Botón de aceptación de cookies */
-.btn-accept {
-            background-color: #004d40;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
-
-.btn-accept:hover {
-            background-color: #00251a;
-        }
-
+.btn-accept,
 .btn-reject {
-            background-color: #004d40;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
+    background-color: #004d40;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
 
+.btn-accept:hover,
 .btn-reject:hover {
-            background-color: #00251a;
-        }
+    background-color: #00251a;
+}
 
-        /* Clase auxiliar para ocultar elementos mediante JavaScript */
 .hidden {
-            display: none !important;
-        }
+    display: none !important;
+}
 
+/* =============================== */
+/*       MENÚ HAMBURGUESA          */
+/* =============================== */
 
-
-/* ===== BOTÓN HAMBURGUESA ===== */
 .menu-toggle {
-    position: absolute;
+    position: fixed; /* siempre visible */
     right: 20px;
     top: 20px;
     font-size: 32px;
     cursor: pointer;
     color: #ff4d6d;
-    z-index: 2000;
+    z-index: 3000;
 }
 
-/* ===== OVERLAY BORROSO ===== */
+/* =============================== */
+/*         OVERLAY BORROSO         */
+/* =============================== */
+
 #overlay {
     position: fixed;
     top: 0;
@@ -164,23 +166,34 @@ footer {
     width: 100%;
     height: 100%;
     backdrop-filter: blur(6px);
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.25);
     display: none;
-    z-index: 1500;
+    z-index: 2500;
 }
 
-/* ===== SIDEBAR ===== */
+#overlay.active {
+    display: block;
+}
+
+/* =============================== */
+/*            SIDEBAR              */
+/* =============================== */
+
 .sidebar {
     position: fixed;
-    right: -260px; /* oculto */
+    right: -300px;
     top: 0;
-    width: 260px;
+    width: 300px;
     height: 100%;
     background: #ffe3ec;
     box-shadow: -4px 0 10px rgba(0,0,0,0.3);
-    padding-top: 80px;
+    padding-top: 120px; /* no tapa el header */
     transition: right 0.4s ease;
-    z-index: 2001;
+    z-index: 3001;
+}
+
+.sidebar.active {
+    right: 0;
 }
 
 .sidebar ul {
@@ -190,13 +203,13 @@ footer {
 }
 
 .sidebar ul li {
-    padding: 18px 30px;
+    padding: 20px 30px;
 }
 
 .sidebar ul li a {
     text-decoration: none;
     color: #d6336c;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -204,26 +217,19 @@ footer {
     color: #a61e4d;
 }
 
-/* ===== SIDEBAR ACTIVO ===== */
-.sidebar.active {
-    right: 0;
-}
+/* =============================== */
+/*      CONTACTO A LA DERECHA      */
+/* =============================== */
 
-#overlay.active {
-    display: block;
-}
-
-
-/* ===== CONTACTO A LA DERECHA ===== */
 .contacto-derecha {
-    width: 280px;               /* tamaño del bloque */
-    background: #fff0f6;        /* rosa suave */
+    width: 280px;
+    background: #fff0f6;
     padding: 25px;
     border-left: 3px solid #ffb3c6;
     position: absolute;
-    right: 20px;                /* separación del borde derecho */
-    top: 150px;                 /* ajusta según tu header */
-    text-align: left;           /* texto alineado normal */
+    right: 20px;
+    top: 150px;
+    text-align: left;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }

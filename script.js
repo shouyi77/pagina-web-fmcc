@@ -26,11 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menuToggle");
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
+    const closeMenu = document.getElementById("closeMenu");
 
     if (menuToggle) {
         menuToggle.addEventListener("click", () => {
             sidebar.classList.add("active");
             overlay.classList.add("active");
+            menuToggle.classList.add("hidden");
         });
     }
 
@@ -39,6 +41,19 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.addEventListener("click", () => {
             sidebar.classList.remove("active");
             overlay.classList.remove("active");
+            setTimeout(() => {
+                menuToggle.classList.remove("hidden");
+            }, 300);
+        });
+    }
+
+    if (closeMenu) {
+        closeMenu.addEventListener("click", () => {
+            sidebar.classList.remove("active");
+            overlay.classList.remove("active");
+            setTimeout(() => {
+                menuToggle.classList.remove("hidden");
+            }, 300);
         });
     }
 
@@ -49,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", () => {
             sidebar.classList.remove("active");
             overlay.classList.remove("active");
+            setTimeout(() => {
+                menuToggle.classList.remove("hidden");
+            }, 300);
         });
     });
 

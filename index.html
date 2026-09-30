@@ -91,6 +91,11 @@
             <!-- Botón que disparará el evento en JavaScript -->
             <button id="acceptCookies" class="btn-accept">Aceptar Cookies</button>
             <button id="rejectCookies" class="btn-reject">NO puedes rechazarlas</button>
+             // 2. Evento para RECHAZAR ccokies (hecho por mi, hay veces q te lleva a Google y te expulsa, otras veces no)
+            rejectButton.addEventListener('click', function() {
+                window.location.replace('https://www.google.com');
+                
+            });
         </div>
     </div>
 <script src="script.js"></script>

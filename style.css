@@ -142,3 +142,51 @@ footer {
 .hidden {
             display: none !important;
         }
+
+
+
+/* ===== BOTÓN HAMBURGUESA ===== */
+.menu-toggle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: #ff4d6d;
+    z-index: 1000;
+}
+
+/* ===== MENÚ DESPLEGABLE ===== */
+.menu-desplegable {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    background: #ffe3ec;
+    width: 180px;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -4px 4px 10px rgba(0,0,0,0.2);
+    padding: 15px 0;
+    display: none;
+}
+
+.menu-desplegable ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-desplegable ul li {
+    padding: 12px 20px;
+}
+
+.menu-desplegable ul li a {
+    text-decoration: none;
+    color: #d6336c;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu-desplegable ul li a:hover {
+    color: #a61e4d;
+}
+

@@ -17,13 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         });
 const menuToggle = document.getElementById("menuToggle");
-const menuDesplegable = document.getElementById("menuDesplegable");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
 
 menuToggle.addEventListener("click", () => {
-    if (menuDesplegable.style.display === "block") {
-        menuDesplegable.style.display = "none";
-    } else {
-        menuDesplegable.style.display = "block";
-    }
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+});
+
+// Cerrar al hacer clic fuera
+overlay.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
 });
 

@@ -1,116 +1,113 @@
-<!-- Declaración del tipo de documento, indica al navegador que es HTML5 -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos básicos y configuración de la codificación de caracteres -->
     <meta charset="UTF-8">
-    <!-- Configuración para diseño responsive (adaptable a móviles) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="hotel4.png">
     <title>Hoteles Princess - La Palma</title>
+    <link rel="icon" href="hotel4.png">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Encabezado de la página web -->
+    <!-- ========================= -->
+    <!--        ENCABEZADO         -->
+    <!-- ========================= -->
     <header>
         <h1>Descubre la Magia de La Palma</h1>
         <p>Dos conceptos, un mismo paraíso en las Islas Canarias</p>
     </header>
 
-    <!-- Botón hamburguesa -->
-<div class="menu-toggle" id="menuToggle">
-    ☰
-</div>
+    <!-- ========================= -->
+    <!--     MENÚ HAMBURGUESA      -->
+    <!-- ========================= -->
+    <div class="menu-toggle" id="menuToggle">☰</div>
 
-<!-- Botón hamburguesa -->
-<div class="menu-toggle" id="menuToggle">
-    ☰
-</div>
+    <!-- Fondo borroso -->
+    <div id="overlay"></div>
 
-<!-- Fondo borroso -->
-<div id="overlay"></div>
+    <!-- Sidebar lateral -->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#conocenos">Conócenos</a></li>
+            <li><a href="#imagenes">Imágenes</a></li>
+            <li><a href="#reserva">Reserva</a></li>
+        </ul>
+    </nav>
 
-<!-- Sidebar lateral -->
-<nav class="sidebar" id="sidebar">
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#conocenos">Conócenos</a></li>
-        <li><a href="#imagenes">Imágenes</a></li>
-        <li><a href="#reserva">Reserva</a></li>
-    </ul>
-</nav>
-
-
-    
-    <!-- Contenedor principal de la información -->
+    <!-- ========================= -->
+    <!--     CONTENIDO PRINCIPAL   -->
+    <!-- ========================= -->
     <div class="container">
-        
-        <!-- Sección dedicada al Hotel La Palma Princess -->
+
+        <!-- Hotel La Palma Princess -->
         <section class="hotel-section" id="la-palma-princess">
             <h2>Hotel La Palma Princess</h2>
             <p>
-                <strong>Hotel La Palma Princess</strong>, ubicado en el municipio de Fuencaliente al sur de la isla, es un macrocomplejo hotelero que destaca por su extensa infraestructura. Su diseño busca integrarse en un paisaje de contrastes: por un lado, el entorno volcánico característico de la zona y, por otro, las vistas directas al Océano Atlántico. Se encuentra a corta distancia en coche de la Playa de la Zamora Chica.
-
-                <h3>Infraestructura Acuática</h3>
-                El complejo suma un total de <strong>11</strong> piscinas al aire libre. En la zona general (La Palma Princess), cuenta con 7 piscinas de agua dulce, las cuales incluyen una piscina infantil y una piscina recreativa que simula una playa con arena artificial. Por su parte, la zona "Esencia de La Palma", diseñada exclusivamente para adultos, dispone de 4 piscinas reservadas para el uso privado de sus huéspedes.
+                Situado en el municipio de Fuencaliente, en un entorno volcánico espectacular, el 
+                <strong>La Palma Princess</strong> es un resort diseñado para integrarse a la perfección con el paisaje canario.
+            </p>
             <p>
-                Destaca ademas por su oferta gastronómica variada y sus extensas instalaciones deportivas, ofreciendo un oasis de tranquilidad en la conocida como "Isla Bonita".
+                Destaca por su impresionante circuito de piscinas, su oferta gastronómica variada y sus extensas instalaciones deportivas.
             </p>
         </section>
 
-
-        <!-- Sección dedicada a Esencia de La Palma (Essentia) -->
+        <!-- Esencia de La Palma -->
         <section class="hotel-section" id="esencia-la-palma">
             <h2>Esencia de La Palma (by Princess)</h2>
             <p>
-                Concebido como un hotel dentro de otro hotel, <strong>Esencia de La Palma</strong> es el área exclusiva "Solo Adultos" (Adults Only) ubicada dentro del complejo La Palma Princess. Está pensado para aquellos que buscan un plus de privacidad, relajación y un servicio más personalizado.
+                <strong>Esencia de La Palma</strong> es el área exclusiva "Solo Adultos" dentro del complejo La Palma Princess.
             </p>
             <p>
-                Los huéspedes de Esencia disfrutan de habitaciones renovadas y espacios privados que incluyen piscinas exclusivas, bares propios, camas balinesas y saunas, manteniendo al mismo tiempo el derecho de acceso a todas las instalaciones generales del resort principal. Es la definición de lujo y desconexión.
+                Habitaciones renovadas, piscinas privadas, camas balinesas y un servicio más personalizado para una experiencia premium.
             </p>
         </section>
 
+        <!-- ========================= -->
+        <!--     CONTACTO DERECHA      -->
+        <!-- ========================= -->
         <section id="contacto" class="contacto-derecha">
-                <h2>Contacto</h2>
-            
-                <p><strong>Teléfono:</strong> 
-                    <a href="tel:+34900123456">900 123 456</a>
-                </p>
-            
-                <p><strong>Email:</strong> 
-                    <a href="mailto:info@tupagina.com">info@tupagina.com</a>
-                </p>
-            
-                <div class="redes">
-                    <a href="https://instagram.com" target="_blank">Instagram</a> |
-                    <a href="https://facebook.com" target="_blank">Facebook</a> |
-                    <a href="https://twitter.com" target="_blank">Twitter</a>
-                </div>
+            <h2>Contacto</h2>
+
+            <p><strong>Teléfono:</strong> 
+                <a href="tel:+34900123456">900 123 456</a>
+            </p>
+
+            <p><strong>Email:</strong> 
+                <a href="mailto:info@tupagina.com">info@tupagina.com</a>
+            </p>
+
+            <div class="redes">
+                <a href="https://instagram.com" target="_blank">Instagram</a> |
+                <a href="https://facebook.com" target="_blank">Facebook</a> |
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
         </section>
-
-
 
     </div>
 
-    <!-- Pie de página con información de copyright -->
+    <!-- ========================= -->
+    <!--        PIE DE PÁGINA      -->
+    <!-- ========================= -->
     <footer>
         <p>&copy; 2026 Información sobre Hoteles Princess en La Palma. Solo con fines educativos.</p>
     </footer>
 
-    <!-- --------------------------------------------------------- -->
-    <!-- Estructura HTML del Pop-up de Cookies                     -->
-    <!-- --------------------------------------------------------- -->
+    <!-- ========================= -->
+    <!--       POP-UP COOKIES      -->
+    <!-- ========================= -->
     <div id="cookieContainer" class="cookie-overlay">
         <div class="cookie-modal">
             <h3>Aviso de Cookies</h3>
-            <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios, personalizar tu experiencia y analizar el tráfico de nuestra web.</p>
+            <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
             <p>¿Aceptas el uso de estas cookies?</p>
-            <!-- Botón que disparará el evento en JavaScript -->
+
             <button id="acceptCookies" class="btn-accept">Aceptar Cookies</button>
             <button id="rejectCookies" class="btn-reject">NO puedes rechazarlas</button>
         </div>
     </div>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>

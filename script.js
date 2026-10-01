@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ================================
-       POP-UP DE COOKIES
-    ================================= */
     const cookieContainer = document.getElementById("cookieContainer");
     const acceptButton = document.getElementById("acceptCookies");
     const rejectButton = document.getElementById("rejectCookies");
@@ -20,9 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ================================
-       MENÚ LATERAL (SIDEBAR)
-    ================================= */
     const menuToggle = document.getElementById("menuToggle");
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");

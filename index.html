@@ -80,7 +80,6 @@
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#eventos">Eventos</a></li>
             <li><a href="#ofertas">Ofertas</a></li>
-            <!-- Modificación: Se añade el evento onclick para ejecutar la función -->
             <li><a href="#galeria" onclick="mostrarGaleria()">Galería</a></li>
         </ul>
     </nav>
@@ -115,13 +114,12 @@
             </p>
         </section>
 
-        <!-- NUEVA SECCIÓN: Galería de Imágenes -->
+        <!-- Galería de Imágenes -->
         <section class="hotel-section" id="galeria">
             <h2>Galería de Imágenes</h2>
             <p>Descubre nuestras instalaciones, habitaciones y paisajes directamente desde aquí.</p>
             
             <div class="galeria-grid">
-                <!-- Sustituye "foto1.jpg" por el nombre real de tu archivo -->
                 <div class="galeria-item">
                     <img src="hotel4.png" alt="Vista del hotel">
                 </div>
@@ -179,9 +177,7 @@
         </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- INICIO DE LA IMPLEMENTACIÓN DEL CHATBOT    -->
-    <!-- ========================================== -->
+    <!-- CHATBOT -->
     <div id="chatbot-container" class="chatbot-wrapper">
         <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">
             💬 Asistente
@@ -203,16 +199,11 @@
             </div>
         </div>
     </div>
-    <!-- ========================================== -->
-    <!-- FIN DE LA IMPLEMENTACIÓN DEL CHATBOT       -->
-    <!-- ========================================== -->
 
     <script src="script.js"></script>
 
-    <!-- Script inyectado para mostrar la galería exclusivamente por interacción -->
     <script>
         function mostrarGaleria() {
-            // Elimina el estilo 'none' y renderiza el bloque en la página
             document.getElementById('galeria').style.display = 'block';
         }
     </script>

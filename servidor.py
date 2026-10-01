@@ -6,11 +6,13 @@ from google import genai
 from dotenv import load_dotenv
 import traceback
 
+# Forzamos la carga del archivo .env de forma directa
 load_dotenv(override=True)
 
 app = Flask(__name__)
 CORS(app)
 
+# Comprobación de la clave
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("¡Error! No se ha podido leer la clave del archivo .env.")
@@ -37,16 +39,17 @@ def chat():
         prompt_completo = f"{CONTEXTO_HOTEL}\n\nPregunta del cliente: {pregunta_usuario}"
         
         response = None
+        # Sistema de reintento automático por si Google sufre saturación puntual (503)
         for intento in range(3):
             try:
                 response = client.models.generate_content(
-                    model='gemini-2.5-flash',
+                    model='gemini-3.8-flash',
                     contents=prompt_completo
                 )
                 break
             except Exception as e_google:
                 if "503" in str(e_google) and intento < 2:
-                    time.sleep(1.5)
+                    time.sleep(1.5)  # Espera 1.5 segundos y reintenta
                     continue
                 raise e_google
 

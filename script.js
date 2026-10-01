@@ -157,3 +157,24 @@ if (box) {
         isDragging = false;
     });
 }
+
+function realizarReserva(){
+
+    let entrada = document.getElementById("entrada").value;
+    let salida = document.getElementById("salida").value;
+    let huespedes = document.getElementById("huespedes").value;
+    let habitaciones = document.getElementById("habitaciones").value;
+
+    if(!entrada || !salida){
+        alert("Seleccione las fechas de entrada y salida");
+        return;
+    }
+
+    alert(
+        "Reserva realizada:\n\n" +
+        "Entrada: " + entrada +
+        "\nSalida: " + salida +
+        "\nHuéspedes: " + huespedes +
+        "\nHabitaciones: " + habitaciones
+    );
+}

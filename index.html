@@ -152,6 +152,39 @@
 
             <button id="acceptCookies" class="btn-accept">Aceptar Cookies</button>
             <button id="rejectCookies" class="btn-reject">Rechazar Cookies</button>
+
+            <!-- ========================================== -->
+    <!-- INICIO DE LA IMPLEMENTACIÓN DEL CHATBOT    -->
+    <!-- ========================================== -->
+    <div id="chatbot-container" class="chatbot-wrapper">
+        <!-- Botón flotante para abrir el chat -->
+        <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">
+            💬 Asistente
+        </button>
+
+        <!-- Ventana del chat (inicialmente oculta vía CSS) -->
+        <div id="chatbot-window" class="chatbot-window" style="display: none;">
+            
+            <div class="chatbot-header">
+                <h4>Atención al Cliente</h4>
+                <button id="chatbot-close-btn" class="chatbot-close-btn">✕</button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <!-- Los mensajes se inyectarán aquí dinámicamente -->
+                <div class="msg-bot">¡Hola! ¿En qué puedo ayudarte con tu reserva en La Palma Princess?</div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Escribe un mensaje..." autocomplete="off">
+                <button id="chatbot-send-btn">Enviar</button>
+            </div>
+            
+        </div>
+    </div>
+    <!-- ========================================== -->
+    <!-- FIN DE LA IMPLEMENTACIÓN DEL CHATBOT       -->
+    <!-- ========================================== -->
         </div>
     </div>
 

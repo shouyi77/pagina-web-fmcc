@@ -6,20 +6,23 @@
     <title>Hoteles Princess - La Palma</title>
     <link rel="icon" href="hotel4.png">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Regla inyectada para ocultar la galería hasta que se haga clic -->
+    <style>
+        #galeria {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <!-- ENCABEZADO -->
     <header>
-
         <div class="top-header">
-
             <div class="menu-toggle" id="menuToggle">
                 ☰
             </div>
-
             <img src="logo-hotel.png" alt="Logo Princess" class="logo-header">
-
         </div>
 
         <div class="hero">
@@ -27,7 +30,6 @@
             <p>Dos conceptos, un mismo paraíso en las Islas Canarias</p>
 
             <div class="search-box">
-
                 <div class="section">
                     <label class="label">📅 Entrada</label>
                     <input type="date" id="entrada">
@@ -60,11 +62,8 @@
                 <button class="btn-search" onclick="realizarReserva()">
                     Buscar
                 </button>
-            
             </div>
-            
         </div>
-
     </header>
 
     <!-- Fondo borroso -->
@@ -72,25 +71,22 @@
 
     <!-- Sidebar lateral -->
     <nav class="sidebar" id="sidebar">
-
         <div class="close-menu" id="closeMenu">
             ✕ Cerrar
         </div>
-
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#conocenos">Conócenos</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#eventos">Eventos</a></li>
             <li><a href="#ofertas">Ofertas</a></li>
-            <li><a href="#galeria">Galería</a></li>
+            <!-- Modificación: Se añade el evento onclick para ejecutar la función -->
+            <li><a href="#galeria" onclick="mostrarGaleria()">Galería</a></li>
         </ul>
     </nav>
     
     <!-- CONTENIDO PRINCIPAL -->
-    
     <div class="container">
-
         <!-- Hotel La Palma Princess -->
         <section class="hotel-section" id="la-palma-princess">
             <h2>Hotel La Palma Princess</h2>
@@ -99,11 +95,12 @@
                 <strong>La Palma Princess</strong> es un resort diseñado para integrarse a la perfección con el paisaje canario.
             </p>
             <p>
-                Destaca ademas El Hotel La Palma Princess, ubicado en el municipio de Fuencaliente al sur de la isla, es un macrocomplejo hotelero que destaca por su extensa infraestructura. Su diseño busca integrarse en un paisaje de contrastes: por un lado, el entorno volcánico característico de la zona y, por otro, las vistas directas al Océano Atlántico. Se encuentra a corta distancia en coche de la Playa de la Zamora Chica.
-
-                <h3>Infraestructura Acuática</h3>
+                El Hotel La Palma Princess, ubicado en el municipio de Fuencaliente al sur de la isla, es un macrocomplejo hotelero que destaca por su extensa infraestructura. Su diseño busca integrarse en un paisaje de contrastes: por un lado, el entorno volcánico característico de la zona y, por otro, las vistas directas al Océano Atlántico. Se encuentra a corta distancia en coche de la Playa de la Zamora Chica.
+            </p>
+            <h3>Infraestructura Acuática</h3>
+            <p>
                 El complejo suma un total de 11 piscinas al aire libre. En la zona general (La Palma Princess), cuenta con 7 piscinas de agua dulce, las cuales incluyen una piscina infantil y una piscina recreativa que simula una playa con arena artificial. 
-                Por su parte, la zona "Esencia de La Palma", diseñada exclusivamente para adultos, dispone de 4 piscinas reservadas para el uso privado de sus huéspedes.por su oferta gastronómica variada y sus extensas instalaciones deportivas.
+                Por su parte, la zona "Esencia de La Palma", diseñada exclusivamente para adultos, dispone de 4 piscinas reservadas para el uso privado de sus huéspedes, por su oferta gastronómica variada y sus extensas instalaciones deportivas.
             </p>
         </section>
 
@@ -117,39 +114,53 @@
                 Habitaciones renovadas, piscinas privadas, camas balinesas y un servicio más personalizado para una experiencia premium.
             </p>
         </section>
+
+        <!-- NUEVA SECCIÓN: Galería de Imágenes -->
+        <section class="hotel-section" id="galeria">
+            <h2>Galería de Imágenes</h2>
+            <p>Descubre nuestras instalaciones, habitaciones y paisajes directamente desde aquí.</p>
+            
+            <div class="galeria-grid">
+                <!-- Sustituye "foto1.jpg" por el nombre real de tu archivo -->
+                <div class="galeria-item">
+                    <img src="foto1.jpg" alt="Vista del hotel">
+                </div>
+                <div class="galeria-item">
+                    <img src="foto2.jpg" alt="Piscina principal">
+                </div>
+                <div class="galeria-item">
+                    <img src="foto3.jpg" alt="Habitación Esencia">
+                </div>
+                <div class="galeria-item">
+                    <img src="foto4.jpg" alt="Restaurante">
+                </div>
+                <div class="galeria-item">
+                    <img src="foto5.jpg" alt="Spa y zona de masajes">
+                </div>
+                <div class="galeria-item">
+                    <img src="foto6.jpg" alt="Atardecer desde el balcón">
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- CONTACTO -->
-
     <section id="contacto" class="contacto-footer">
-
         <div class="contacto-info">
             <h2>La Palma Princess</h2>
-
             <p>Carretera de la Costa, Fuencaliente</p>
             <p>38740 La Palma, Islas Canarias</p>
             <p>España</p>
-
             <p><a href="tel:+34900123456">📞 +34 900 123 456</a></p>
             <p><a href="mailto:info@tupagina.com">✉ info@tupagina.com</a></p>
         </div>
 
         <div class="contacto-redes">
             <h3>Síguenos</h3>
-
-            <a href="https://www.instagram.com/princesshotels/" target="_blank">
-                Instagram
-            </a>
-
-            <a href="https://www.facebook.com/PrincessHotelsResorts/" target="_blank">
-                Facebook
-            </a>
-
-            <a href="https://www.youtube.com/channel/UC6Jx3EjAbSS7NRlfNhyW1PA" target="_blank">
-                YouTube
-            </a>
+            <a href="https://www.instagram.com/princesshotels/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/PrincessHotelsResorts/" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/channel/UC6Jx3EjAbSS7NRlfNhyW1PA" target="_blank">YouTube</a>
         </div>
-
     </section>
 
     <!-- PIE DE PÁGINA -->
@@ -157,36 +168,32 @@
         <p>&copy; 2026 Información sobre Hoteles Princess en La Palma. Solo con fines educativos.</p>
     </footer>
 
- <!-- POP-UP COOKIES -->
+    <!-- POP-UP COOKIES -->
     <div id="cookieContainer" class="cookie-overlay">
         <div class="cookie-modal">
             <h3>Aviso de Cookies</h3>
             <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
             <p>¿Aceptas el uso de estas cookies?</p>
-
             <button id="acceptCookies" class="btn-accept">Aceptar Cookies</button>
             <button id="rejectCookies" class="btn-reject">Rechazar Cookies</button>
         </div>
     </div>
+
     <!-- ========================================== -->
     <!-- INICIO DE LA IMPLEMENTACIÓN DEL CHATBOT    -->
     <!-- ========================================== -->
     <div id="chatbot-container" class="chatbot-wrapper">
-        <!-- Botón flotante para abrir el chat -->
         <button id="chatbot-toggle-btn" class="chatbot-toggle-btn">
             💬 Asistente
         </button>
 
-        <!-- Ventana del chat (inicialmente oculta vía CSS) -->
         <div id="chatbot-window" class="chatbot-window" style="display: none;">
-            
             <div class="chatbot-header">
                 <h4>Atención al Cliente</h4>
                 <button id="chatbot-close-btn" class="chatbot-close-btn">✕</button>
             </div>
             
             <div class="chatbot-messages" id="chatbot-messages">
-                <!-- Los mensajes se inyectarán aquí dinámicamente -->
                 <div class="msg-bot">¡Hola! ¿En qué puedo ayudarte con tu reserva en La Palma Princess?</div>
             </div>
             
@@ -194,7 +201,6 @@
                 <input type="text" id="chatbot-input" placeholder="Escribe un mensaje..." autocomplete="off">
                 <button id="chatbot-send-btn">Enviar</button>
             </div>
-            
         </div>
     </div>
     <!-- ========================================== -->
@@ -202,5 +208,13 @@
     <!-- ========================================== -->
 
     <script src="script.js"></script>
+
+    <!-- Script inyectado para mostrar la galería exclusivamente por interacción -->
+    <script>
+        function mostrarGaleria() {
+            // Elimina el estilo 'none' y renderiza el bloque en la página
+            document.getElementById('galeria').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

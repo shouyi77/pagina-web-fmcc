@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (acceptButton && cookieContainer) {
         acceptButton.addEventListener("click", () => {
             cookieContainer.style.display = "none";
+            const entradaSection = document.getElementById("entrada");
+            if (entradaSection) {
+                entradaSection.scrollIntoView({ behavior: "smooth" });
+                entradaSection.focus();
+            }
         });
     }
 
@@ -67,12 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputSalida = document.getElementById("salida");
 
     if (inputEntrada && inputSalida) {
-        // Poner fecha mínima de hoy
         const hoy = new Date().toISOString().split("T")[0];
         inputEntrada.min = hoy;
         inputSalida.min = hoy;
 
-        // Cuando cambie la entrada, actualizar el mínimo de la salida
         inputEntrada.addEventListener("change", () => {
             const fechaEntradaVal = inputEntrada.value;
             inputSalida.min = fechaEntradaVal;
@@ -107,17 +110,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const text = chatbotInput.value.trim();
         if (text === "") return;
 
-        // Mostrar mensaje del usuario
         const userMsg = document.createElement("div");
         userMsg.classList.add("msg-user");
         userMsg.textContent = text;
         chatbotMessages.appendChild(userMsg);
 
-        // Limpiar el input y bajar el scroll
         chatbotInput.value = "";
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
-        // --- CONEXIÓN CON FLASK (GEMINI) ---
         fetch('http://127.0.0.1:5000/chat', {
             method: 'POST',
             headers: {
@@ -153,6 +153,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.key === "Enter") {
                 e.preventDefault();
                 sendMessage();
+            }
+        });
+    }
+});
             }
         });
     }

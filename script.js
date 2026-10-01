@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const acceptButton = document.getElementById("acceptCookies");
     const rejectButton = document.getElementById("rejectCookies");
 
-    if (acceptButton) {
+    if (acceptButton && cookieContainer) {
         acceptButton.addEventListener("click", () => {
-            cookieContainer.classList.add("hidden");
+            cookieContainer.style.display = "none";
         });
     }
 
@@ -153,10 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.key === "Enter") {
                 e.preventDefault();
                 sendMessage();
-            }
-        });
-    }
-});
             }
         });
     }

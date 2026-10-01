@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // --- COOKIES ---
     const cookieContainer = document.getElementById("cookieContainer");
     const acceptButton = document.getElementById("acceptCookies");
     const rejectButton = document.getElementById("rejectCookies");
@@ -12,11 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (rejectButton) {
         rejectButton.addEventListener("click", () => {
-            // Redirige siempre correctamente
             window.location.href = "https://www.google.com";
         });
     }
 
+    // --- MENÚ LATERAL (SIDEBAR) ---
     const menuToggle = document.getElementById("menuToggle");
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
@@ -30,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Cerrar al hacer clic fuera
     if (overlay) {
         overlay.addEventListener("click", () => {
             sidebar.classList.remove("active");
@@ -51,9 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Cerrar el menú al hacer clic en un enlace del sidebar
     const sidebarLinks = document.querySelectorAll(".sidebar a");
-
     sidebarLinks.forEach(link => {
         link.addEventListener("click", () => {
             sidebar.classList.remove("active");
@@ -64,10 +62,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ==========================================
-    // INICIO: LÓGICA DEL CHATBOT AÑADIDA
-    // ==========================================
-    
+    // --- FECHAS DINÁMICAS DEL BUSCADOR ---
+    const inputEntrada = document.getElementById("entrada");
+    const inputSalida = document.getElementById("salida");
+
+    if (inputEntrada && inputSalida) {
+        // Poner fecha mínima de hoy
+        const hoy = new Date().toISOString().split("T")[0];
+        inputEntrada.min = hoy;
+        inputSalida.min = hoy;
+
+        // Cuando cambie la entrada, actualizar el mínimo de la salida
+        inputEntrada.addEventListener("change", () => {
+            const fechaEntradaVal = inputEntrada.value;
+            inputSalida.min = fechaEntradaVal;
+            if (inputSalida.value && inputSalida.value < fechaEntradaVal) {
+                inputSalida.value = fechaEntradaVal;
+            }
+        });
+    }
+
+    // --- LÓGICA DEL CHATBOT ---
     const chatbotToggleBtn = document.getElementById("chatbot-toggle-btn");
     const chatbotWindow = document.getElementById("chatbot-window");
     const chatbotCloseBtn = document.getElementById("chatbot-close-btn");
@@ -76,13 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatbotMessages = document.getElementById("chatbot-messages");
 
     if (chatbotToggleBtn && chatbotWindow && chatbotCloseBtn) {
-        // Abrir la ventana del chat
         chatbotToggleBtn.addEventListener("click", () => {
             chatbotWindow.style.display = "flex";
             chatbotToggleBtn.style.display = "none";
         });
 
-        // Cerrar la ventana del chat
         chatbotCloseBtn.addEventListener("click", () => {
             chatbotWindow.style.display = "none";
             chatbotToggleBtn.style.display = "block";
@@ -90,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const sendMessage = () => {
+        if (!chatbotInput) return;
         const text = chatbotInput.value.trim();
         if (text === "") return;
 
@@ -103,78 +117,43 @@ document.addEventListener("DOMContentLoaded", () => {
         chatbotInput.value = "";
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 
-        // Simular una respuesta del servidor (Backend simulado)
-        setTimeout(() => {
+        // --- CONEXIÓN CON FLASK (GEMINI) ---
+        fetch('http://127.0.0.1:5000/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ mensaje: text })
+        })
+        .then(response => response.json())
+        .then(data => {
             const botMsg = document.createElement("div");
             botMsg.classList.add("msg-bot");
-            botMsg.textContent = "Hemos recibido tu mensaje. Por favor, espera mientras te contactamos con un agente de La Palma Princess.";
+            botMsg.textContent = data.respuesta;
             chatbotMessages.appendChild(botMsg);
-            
-            // Bajar el scroll al nuevo mensaje
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-        }, 1200);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            const errorMsg = document.createElement("div");
+            errorMsg.classList.add("msg-bot");
+            errorMsg.textContent = "Lo siento, ha ocurrido un error al conectar con el servidor.";
+            chatbotMessages.appendChild(errorMsg);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        });
     };
 
     if (chatbotSendBtn && chatbotInput) {
-        // Enviar por click en el botón
-        chatbotSendBtn.addEventListener("click", sendMessage);
+        chatbotSendBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            sendMessage();
+        });
 
-        // Enviar por tecla "Enter"
-        chatbotInput.addEventListener("keypress", (e) => {
+        chatbotInput.addEventListener("keydown", (e) => {
             if (e.key === "Enter") {
+                e.preventDefault();
                 sendMessage();
             }
         });
     }
-
-    // ==========================================
-    // FIN: LÓGICA DEL CHATBOT AÑADIDA
-    // ==========================================
-
 });
-
-const box = document.getElementById("dragBox");
-
-// Verifica si dragBox existe para evitar errores en consola si no está en el HTML
-if (box) {
-    let isDragging = false;
-    let offsetX;
-    let offsetY;
-
-    box.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        offsetX = e.clientX - box.offsetLeft;
-        offsetY = e.clientY - box.offsetTop;
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        box.style.left = (e.clientX - offsetX) + "px";
-        box.style.top = (e.clientY - offsetY) + "px";
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-    });
-}
-
-function realizarReserva(){
-
-    let entrada = document.getElementById("entrada").value;
-    let salida = document.getElementById("salida").value;
-    let huespedes = document.getElementById("huespedes").value;
-    let habitaciones = document.getElementById("habitaciones").value;
-
-    if(!entrada || !salida){
-        alert("Seleccione las fechas de entrada y salida");
-        return;
-    }
-
-    alert(
-        "Reserva realizada:\n\n" +
-        "Entrada: " + entrada +
-        "\nSalida: " + salida +
-        "\nHuéspedes: " + huespedes +
-        "\nHabitaciones: " + habitaciones
-    );
-}

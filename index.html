@@ -26,27 +26,41 @@
             <h1>Descubre la Magia de La Palma</h1>
             <p>Dos conceptos, un mismo paraíso en las Islas Canarias</p>
 
-            <div class="search-box" id="dragBox">
+            <div class="search-box">
 
                 <div class="section">
-                    <div class="label">📅 Cuándo</div>
-                    <div class="value">Entrada - Salida</div>
+                    <label class="label">📅 Entrada</label>
+                    <input type="date" id="entrada">
                 </div>
             
                 <div class="section">
-                    <div class="label">👥 Quién</div>
-                    <div class="value">2 adultos · 1 habitación</div>
+                    <label class="label">📅 Salida</label>
+                    <input type="date" id="salida">
                 </div>
             
                 <div class="section">
-                    <div class="label">🏷️ Promoción</div>
-                    <div class="value">Código</div>
+                    <label class="label">👥 Huéspedes</label>
+                    <select id="huespedes">
+                        <option>1 Adulto</option>
+                        <option selected>2 Adultos</option>
+                        <option>3 Adultos</option>
+                        <option>4 Adultos</option>
+                    </select>
                 </div>
             
-                <button class="btn-search">
+                <div class="section">
+                    <label class="label">🛏 Habitaciones</label>
+                    <select id="habitaciones">
+                        <option selected>1 Habitación</option>
+                        <option>2 Habitaciones</option>
+                        <option>3 Habitaciones</option>
+                    </select>
+                </div>
+            
+                <button class="btn-search" onclick="realizarReserva()">
                     Buscar
                 </button>
-        
+            
             </div>
             
         </div>
@@ -152,8 +166,9 @@
 
             <button id="acceptCookies" class="btn-accept">Aceptar Cookies</button>
             <button id="rejectCookies" class="btn-reject">Rechazar Cookies</button>
-
-            <!-- ========================================== -->
+        </div>
+    </div>
+    <!-- ========================================== -->
     <!-- INICIO DE LA IMPLEMENTACIÓN DEL CHATBOT    -->
     <!-- ========================================== -->
     <div id="chatbot-container" class="chatbot-wrapper">
@@ -185,8 +200,6 @@
     <!-- ========================================== -->
     <!-- FIN DE LA IMPLEMENTACIÓN DEL CHATBOT       -->
     <!-- ========================================== -->
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
